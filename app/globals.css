@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.muscleatlas{
+  display: flex;
+  justify-content: left;
+}
+
+.text-52 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.text-88 {
+  font-size: 88px;
+  font-weight: 700;
+  line-height: 120%;
+}
