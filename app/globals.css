@@ -8,7 +8,7 @@
   justify-content: left;
 }
 
-.text-52 {
+/* .text-52 {
   font-size: 52px;
   font-weight: 700;
   line-height: 120%;
@@ -17,5 +17,44 @@
 .text-88 {
   font-size: 88px;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 120%; */
+
+@layer utilities{
+  .text-52 {
+    @apply text-[52px] font-[300] leading-[120%];
+  }
+  .text-88 {
+    @apply text-[88px] font-[700] leading-[120%];
+  }
+  .padding-container {
+    @apply px-6 lg:px-20;
+  }
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+
+  .login_btn {
+    @apply flex items-center border-2 border-[#000000]
+     px-8 py-4 rounded-full 
+     bg-[#000000] text-[#ffffff] font-[700] 
+     text-[12px] leading-[100%]
+     hover:bg-[#ffffff] hover:text-[#000000]
+     transition duration-300 ease-in-out;
+  }
+
+  .create_btn {
+    @apply flex items-center
+           px-8 py-4 rounded-full 
+           bg-[#000000] text-[#ffffff] font-[700] 
+           text-[12px] leading-[100%]
+           hover:bg-[#ffffff] hover:text-[#000000]
+           transition duration-300 ease-in-out;
+  }
+
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
 }
