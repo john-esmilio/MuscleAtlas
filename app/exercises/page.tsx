@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
+import ExercisesPage from "../exercises/exercisesPage";
 
-export default function exercisesPage() {
+const Page = () => {
   return (
-    <div>
-      <h1>Exercises</h1>
-      
-    </div>
-  )
-}
+    <>
+      <ExercisesPage />
+    </>
+  );
+};
+
+export default Page;
