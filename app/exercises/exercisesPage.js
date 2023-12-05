@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { fetchExerciseData } from './exercisesData'; 
 
 const ExercisesPage = () => {
   const [exercises, setExercises] = useState([]);
@@ -11,50 +10,47 @@ const ExercisesPage = () => {
   const [sortKey, setSortKey] = useState('name');
 
   useEffect(() => {
-    setLoading(true);
-    fetchExerciseData()
-      .then(data => {
+    const fetchExerciseData = async () => {
+      try {
+        const response = await fetch('/api/route');
+        if (!response.ok) {
+          throw new Error('Data could not be fetched!');
+        }
+        const data = await response.json();
         setExercises(data);
-        setFilteredExercises(data);
-        setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         setError(error.message);
-        setLoading(false);
-      });
+      }
+      setLoading(false);
+    };
+
+    fetchExerciseData();
   }, []);
 
   useEffect(() => {
-    const result = exercises.filter(exercise =>
-      exercise.muscle.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredExercises(result);
-  }, [searchTerm, exercises]);
+    let result = exercises;
 
-  useEffect(() => {
-    let sortedExercises = [...exercises].filter(exercise =>
-      exercise.muscle.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    if (searchTerm) {
+      result = result.filter(exercise =>
+        exercise.muscle.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
   
-    sortedExercises.sort((a, b) => {
-      if (sortKey == 'name') {
+    result = result.sort((a, b) => {
+      if (sortKey === 'name') {
         return a.name.localeCompare(b.name);
-      } 
-      else if (sortKey === 'nameDesc') {
+      } else if (sortKey === 'nameDesc') {
         return b.name.localeCompare(a.name);
-      }
-      else if (sortKey === 'difficulty') {
+      } else if (sortKey === 'difficulty') {
         return a.difficulty.localeCompare(b.difficulty);
-      }
-      else if (sortKey === 'difficultyDesc') {
+      } else if (sortKey === 'difficultyDesc') {
         return b.difficulty.localeCompare(a.difficulty);
       }
       return 0;
     });
   
-    setFilteredExercises(sortedExercises);
+    setFilteredExercises(result);
   }, [searchTerm, exercises, sortKey]);
-  
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -91,6 +87,7 @@ const ExercisesPage = () => {
             <p>Muscle: {exercise.muscle}</p>
             <p>Difficulty: {exercise.difficulty}</p>
             <p>Equipment: {exercise.equipment}</p>
+            
           </div>
         ))}
       </div>
