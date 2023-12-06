@@ -3,7 +3,7 @@ export const navItems = [
   {href: '/', key: 'home', label: 'Home'},
   {href: '/exercises', key: 'exercises', label: 'Exercises'},
   {href: '/programs', key: 'training_programs', label: 'Training Programs'},
-  {href: '/', key: 'support', label: 'Support'},
+  {href: '/support', key: 'support', label: 'Support'},
   {href: '/', key: 'account', label: 'Account'},
 ];
 
