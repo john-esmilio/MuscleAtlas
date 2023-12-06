@@ -2,7 +2,7 @@
 export const navItems = [
   {href: '/', key: 'home', label: 'Home'},
   {href: '/exercises', key: 'exercises', label: 'Exercises'},
-  {href: '/', key: 'training_programs', label: 'Training Programs'},
+  {href: '/programs', key: 'training_programs', label: 'Training Programs'},
   {href: '/', key: 'support', label: 'Support'},
   {href: '/', key: 'account', label: 'Account'},
 ];
@@ -21,18 +21,21 @@ export const workoutFooterItems = [
   {href: '/exercises', key: 'routines', label: 'Routines'},
 ];
 
+// array of objects for the footer
 export const healthFooterItems = [
   {href: '/', key: 'health', label: 'Health'},
   {href: '/', key: 'nutrition', label: 'Nutrition'},
   {href: '/', key: 'fitness', label: 'Fitness'},
 ];
 
+// array of objects for the footer
 export const legalFooterItems = [
   {href: '/', key: 'terms', label: 'Terms of Use'},
   {href: '/', key: 'privacy', label: 'Privacy Policy'},
   {href: '/', key: 'security', label: 'Security'},
 ];
 
+// array of objects for the features section
 export const featuresItems = [
   {title: 'Exercises', description: 'A large amount of exercises is directly available to you.',},
   {title: 'Speed', description: 'Have a quick workout fast with how fast our website is.',},
