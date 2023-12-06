@@ -3,6 +3,11 @@ import Image from "next/image";
 import { navItems } from "@/constant";
 import Login from "./Button";
 
+/**
+ * Navbar component displays the navbar of the app.
+ * Navbar items are stored in constant.ts
+ * @returns Navbar component
+ */
 const Navbar = () => {
   return (
     <nav className="flexBetween max-container padding-container relative z-30 py-5">

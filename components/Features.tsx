@@ -1,5 +1,9 @@
 import { featuresItems } from "@/constant";
 
+/*
+  Features Section displays the features of the app
+  Features are stored in constant.ts
+*/
 type FeatureItem = {
   title: string;
   description: string;

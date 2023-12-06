@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/*
+  Main Section displays the main section of the app
+  Main section is the first thing you see when you load the app
+*/
+
 const MainSection = () => {
   return (
     <div className="relative before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-60 before:z-10">

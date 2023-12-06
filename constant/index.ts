@@ -1,16 +1,19 @@
+// array of objects for the navbar
 export const navItems = [
   {href: '/', key: 'home', label: 'Home'},
   {href: '/exercises', key: 'exercises', label: 'Exercises'},
-  {href: '/', key: 'training_programs', label: 'Training Programs'},
-  {href: '/', key: 'support', label: 'Support'},
+  {href: '/programs', key: 'training_programs', label: 'Training Programs'},
+  {href: '/support', key: 'support', label: 'Support'},
   {href: '/', key: 'account', label: 'Account'},
 ];
 
+// array of objects for the footer
 export const companyFooterItems = [
   {href: '/', key: 'about', label: 'About'},
   {href: '/', key: 'contact', label: 'Contact'},
 ];
 
+// array of objects for the footer
 export const workoutFooterItems = [
   {href: '/', key: 'workout_videos', label: 'Workout Videos'},
   {href: '/', key: 'custom_workouts', label: 'Custom Workouts'},

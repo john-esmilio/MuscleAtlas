@@ -8,6 +8,11 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+/*
+  Footer Section displays the footer of the app
+  Footer items are stored in constant.ts
+  Mostly filler navigation text, will update in future.
+*/
 const Footer = () => {
   return (
     <footer className="bg-gray-800">
